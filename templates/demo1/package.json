@@ -1,6 +1,6 @@
 {
   "name": "demo1",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "author": "Diego <arnes.diego@gmail.com>",
   "license": "ISC",
   "directories": {
@@ -23,9 +23,9 @@
     "lint": "yarn lint:js"
   },
   "dependencies": {
-    "master-template": "^0.0.0",
-    "nuxt": "^2.15.8",
-    "core-js": "^3.8.3"
+    "core-js": "^3.8.3",
+    "master-template": "^0.0.1",
+    "nuxt": "^2.15.8"
   },
   "bugs": {
     "url": "https://github.com/studios-vito/Arvi/issues"
