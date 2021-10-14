@@ -1,3 +1,4 @@
+import defaultConfig from 'baseTemplate/nuxt.config'
 
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
