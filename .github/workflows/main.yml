@@ -26,7 +26,7 @@ jobs:
           ${{ runner.os }}-node-
     - run: npm install
 
-    - run: lerna run --stream --scope demo1 generate
+    - run: npx lerna run --stream --scope demo1 generate
 
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
