@@ -24,7 +24,8 @@
   },
   "dependencies": {
     "master-template": "^0.0.0",
-    "nuxt": "^2.15.8"
+    "nuxt": "^2.15.8",
+    "core-js": "^3.8.3"
   },
   "bugs": {
     "url": "https://github.com/studios-vito/Arvi/issues"
