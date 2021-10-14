@@ -27,7 +27,7 @@ jobs:
     - run: npm install
     
     - name: Run build 📦
-      run: lerna run build
+      run: npx lerna run --stream --scope demo1 build
 
     - run: npx lerna run --stream --scope demo1 generate
 
