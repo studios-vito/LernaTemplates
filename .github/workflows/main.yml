@@ -25,10 +25,8 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-node-
     - run: npm ci
-      working-directory: templates/demo1
 
-    - run: npm run generate
-      working-directory: templates/demo1
+    - run: lerna run --stream --scope demo1 generate
 
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
@@ -36,4 +34,4 @@ jobs:
         server: ftp.studiosvito.com
         username: admindemos@arvi.studiosvito.com
         password: ${{ secrets.passwordAdminDemos }}
-        local-dir: templates/demo1/dist/
+        local-dir: packages/demo1/dist/
