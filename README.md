@@ -9,5 +9,5 @@ https://medium.com/dailyjs/5-tips-for-sharing-code-between-nuxtjs-projects-6ffb5
 
 ## create new project
 
-> lerna create demo1 --dependencies nuxt master-template --yes
+> lerna create demo1  master-template --yes
 > lerna bootstrap
