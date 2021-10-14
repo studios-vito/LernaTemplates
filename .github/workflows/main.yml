@@ -24,7 +24,7 @@ jobs:
         key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
         restore-keys: |
           ${{ runner.os }}-node-
-    - run: npm ci
+    - run: npm install
 
     - run: lerna run --stream --scope demo1 generate
 
