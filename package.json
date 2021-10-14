@@ -1,0 +1,30 @@
+{
+  "name": "lernatemplates",
+  "version": "1.0.0",
+  "description": "## Docs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/studios-vito/LernaTemplates.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/studios-vito/LernaTemplates/issues"
+  },
+  "homepage": "https://github.com/studios-vito/LernaTemplates#readme",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "dependencies": {
+    "core-js": "^3.15.1",
+    "nuxt": "^2.15.7"
+  },
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  }
+}
