@@ -1,0 +1,39 @@
+name: FrontEnd
+
+on:
+  push:
+    branches:
+    - main
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v2.3.2
+
+    - name: Setup Node
+      uses: actions/setup-node@v1
+      with:
+        node-version: '14.15.5'
+
+    - name: Cache dependencies
+      uses: actions/cache@v1
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
+    - run: npm ci
+      working-directory: templates/demo1
+
+    - run: npm run generate
+      working-directory: templates/demo1
+
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.0.0
+      with:
+        server: ftp.studiosvito.com
+        username: admindemos@arvi.studiosvito.com
+        password: ${{ secrets.passwordAdminDemos }}
+        local-dir: templates/demo1/dist/
