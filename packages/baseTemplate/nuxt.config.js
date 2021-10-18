@@ -19,6 +19,7 @@ export default {
     ]
   },
 
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
   ],
@@ -36,7 +37,14 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/strapi',
   ],
+
+  // strapi module configuration: https://strapi.nuxtjs.org/
+  strapi: {
+    entities: ['notes', 'users', 'mytemplates'],
+    url: process.env.STRAPI_URL || 'https://arvistrapi.studiosvito.com/'
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
