@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[2],{211:function(t,n,e){"use strict";e.r(n);var l=e(28),component=Object(l.a)({},(function(){var t=this,n=t.$createElement;return(t._self._c||n)("button",{staticClass:"b-btn"},[t._v("Hoge")])}),[],!1,null,null,null);n.default=component.exports}}]);
