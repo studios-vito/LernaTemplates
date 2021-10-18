@@ -7,7 +7,6 @@
             <p>{{ template.description }}</p>
             <p>{{ template.price }} $</p>
             <nuxt-img provider="strapi" max-width="50%" :src="template.image.url" />
-            <iframe src="https://arvi.studiosvito.com/admindemos/index.html" frameborder="0"></iframe>
         </div>
     </div>
 </template>
