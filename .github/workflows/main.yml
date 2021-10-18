@@ -13,6 +13,7 @@ jobs:
       matrix:
         os: [ubuntu-latest]
         node: [14]
+        demos: [demo1, demo2]
 
     steps:
       - name: Checkout 🛎
@@ -47,5 +48,5 @@ jobs:
           server: ftp.studiosvito.com
           username: admintemplates@arvi.studiosvito.com	
           password: ${{ secrets.passwordAdminDemos }}
-          local-dir: packages/demo1/dist/
-          server-dir: demo1/
+          local-dir: packages/${{ matrix.demos }}/dist/
+          server-dir: ${{ matrix.demos }}/
