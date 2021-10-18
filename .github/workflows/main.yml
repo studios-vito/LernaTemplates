@@ -48,4 +48,4 @@ jobs:
           username: admintemplates@arvi.studiosvito.com	
           password: ${{ secrets.passwordAdminDemos }}
           local-dir: packages/demo1/dist/
-          server-dir: demo1
+          server-dir: demo1/
