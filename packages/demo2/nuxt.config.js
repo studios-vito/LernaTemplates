@@ -11,5 +11,5 @@ export default {
       ],
       link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     },
-  modules: ['baseTemplate/module']
+  modules: [...defaultConfig.modules, 'baseTemplate/module'],
 }
