@@ -14,17 +14,9 @@
 <script >
 export default {
     layout: 'base_default',
-    data() {
-        return {
-            template: "",
-        };
-    },
     async asyncData({ $strapi, route }) {
-        if (route.query.id) {
-            this.template = await $strapi.$notes.findOne(route.query.id);
-
-        }
-
+        const template = await $strapi.$notes.findOne(route.query.id);
+        return { template };
     },
 };
 </script>
