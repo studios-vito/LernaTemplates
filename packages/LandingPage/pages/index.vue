@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>DEMO 2</h1>
+        <h1>Landing Page</h1>
         <base-button />
         <div v-if="this.$route.query.id">
             <h1>test</h1>

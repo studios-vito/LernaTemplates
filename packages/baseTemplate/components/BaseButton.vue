@@ -1,3 +1,3 @@
 <template>
-    <button class="b-btn">Hoge</button>
+    <button>Base template button</button>
 </template>
