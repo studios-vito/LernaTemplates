@@ -1,3 +1,4 @@
+require("dotenv").config();
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -38,12 +39,21 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+    '@nuxt/image',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/auth-next',
+    '@nuxtjs/axios',
+    '@nuxtjs/pwa',
     '@nuxtjs/strapi',
+    '@nuxtjs/dotenv',
   ],
+  // Axios module configuration: https://go.nuxtjs.dev/config-axios
+  axios: {
+    baseURL: process.env.NODE_ENV === 'development' ? process.env.BASE_URL : 'https://arvistrapi.studiosvito.com/'
+  },
 
   // strapi module configuration: https://strapi.nuxtjs.org/
   strapi: {
