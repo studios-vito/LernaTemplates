@@ -2,7 +2,7 @@
     <div>
         <h1>DEMO 2</h1>
         <base-button />
-        <div>
+        <div v-if="this.$route.query.id">
             <h1>test</h1>
             <h1>{{ template.title }}</h1>
             <p>{{ template.description }}</p>
@@ -14,9 +14,17 @@
 <script >
 export default {
     layout: 'base_default',
+    data() {
+        return {
+            template: "",
+        };
+    },
     async asyncData({ $strapi, route }) {
-        const template = await $strapi.$notes.findOne(route.params.id);
-        return { template };
+        if (route.query.id) {
+            this.template = await $strapi.$notes.findOne(route.query.id);
+
+        }
+
     },
 };
 </script>
