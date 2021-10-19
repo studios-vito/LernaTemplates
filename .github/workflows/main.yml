@@ -13,7 +13,7 @@ jobs:
       matrix:
         os: [ubuntu-latest]
         node: [14]
-        demos: [demo1, demo2]
+        demos: [Bussiness, LandingPage]
 
     steps:
       - name: Checkout 🛎
