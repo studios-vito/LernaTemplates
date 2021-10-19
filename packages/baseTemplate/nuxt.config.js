@@ -45,6 +45,20 @@ export default {
     entities: ['notes', 'users', 'mytemplates'],
     url: process.env.STRAPI_URL || 'https://arvistrapi.studiosvito.com/'
   },
+  // Image module configuration: https://image.nuxtjs.org/
+  image: {
+    providers: {
+      strapi: {
+        name: 'strapi',
+        provider: require.resolve('./providers/strapi'),
+        options: {
+          baseURL: process.env.NODE_ENV === "development"
+            ? "http://localhost:1337"
+            : "https://arvistrapi.studiosvito.com",
+        }
+      }
+    },
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
