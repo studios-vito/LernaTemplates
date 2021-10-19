@@ -1,7 +1,12 @@
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
-
+  env: {
+    baseUrl:
+      process.env.NODE_ENV === 'development'
+        ? 'http://localhost:1337'
+        : 'https://arvistrapi.studiosvito.com'
+  },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'baseTemplate',
