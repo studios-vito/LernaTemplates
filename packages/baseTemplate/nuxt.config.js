@@ -43,7 +43,7 @@ export default {
   // strapi module configuration: https://strapi.nuxtjs.org/
   strapi: {
     entities: ['notes', 'users', 'mytemplates'],
-    url: process.env.STRAPI_URL || 'https://arvistrapi.studiosvito.com/templates/demo2/'
+    url: process.env.STRAPI_URL || 'https://arvistrapi.studiosvito.com/'
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
