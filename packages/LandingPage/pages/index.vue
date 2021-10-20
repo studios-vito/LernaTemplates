@@ -16,12 +16,11 @@ export default {
             querry: "",
         };
     },
-    mounted: function () {
-        this.querry = this.$route.query.id;
-    },
+
     async asyncData({ $strapi, route }) {
         console.log('id', route.query.id)
-        const template = await $strapi.$notes.findOne(querry);
+        const id = route.query.id;
+        const template = await $strapi.$notes.findOne(id);
         return { template };
     },
 };
