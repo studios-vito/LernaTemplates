@@ -15,7 +15,8 @@
 export default {
     layout: 'base_default',
     async asyncData({ $strapi, route }) {
-        const template = await $strapi.$notes.findOne(route.query.id);
+        console.log('id', route.query.id)
+        const template = await $strapi.$notes.findOne(18);
         return { template };
     },
 };
