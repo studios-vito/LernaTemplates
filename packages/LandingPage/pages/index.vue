@@ -11,12 +11,6 @@
 <script >
 export default {
     layout: 'base_default',
-    data() {
-        return {
-            querry: "",
-        };
-    },
-
     async asyncData({ $strapi, route }) {
         console.log('id', route.query.id)
         let id = '';

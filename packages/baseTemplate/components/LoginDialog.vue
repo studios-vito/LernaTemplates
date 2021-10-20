@@ -1,7 +1,8 @@
 <template>
   <v-dialog v-model="dialog" max-width="400px">
     <template v-slot:activator="{ on, attrs }">
-      <BtnPill input="EDIT" :attrs="attrs" :on="on" />
+      <BtnPill input="EDIT" :attrs="attrs" :on="on" v-if="$strapi.user" />
+      <BtnPill input="EDIT" v-if="$strapi.user !== null" @click="createTemplate(template)" />
     </template>
     <v-card class="rounded-xl">
       <v-card-title class="justify-center">
@@ -80,8 +81,20 @@
 </template>
 <script>
 export default {
+  async mounted() {
+    try {
+      let id = '';
+      if (this.$route.query.id) {
+        id = this.$route.query.id;
+      }
+      this.template = await this.$strapi.$notes.findOne(id);
+    } catch (error) {
+      this.error = error;
+    }
+  },
   data() {
     return {
+      templates: [],
       dialog: false,
       api: process.env.baseUrl,
       valid: false,
@@ -106,12 +119,32 @@ export default {
         if (user !== null) {
           this.dialog = false;
           this.error = null;
-          this.$nuxt.$router.push(`/users/${this.$strapi.user.id}`);
+          createTemplate(this.template)
         }
       } catch (error) {
         if (error.message === "Identifier or password invalid.") {
           this.error = "Email or password invalid.";
         }
+      }
+    },
+    async createTemplate(data) {
+      try {
+        const newMyTemplate = await this.$strapi.create("mytemplates", {
+          title: data.title,
+          description: data.Description,
+          price: data.price,
+          users_permissions_user: this.$strapi.user,
+          Editors: [],
+          template: data.title,
+          image: data.image,
+          Stripe_id: data.Stripe_id,
+          PayStatus: false,
+        });
+        this.$nuxt.$router.push(
+          `/users/${this.$strapi.user.id}/mytemplates/${newMyTemplate.id}`
+        );
+      } catch (error) {
+        this.error = error;
       }
     },
   },
