@@ -94,7 +94,7 @@ export default {
   },
   data() {
     return {
-      templates: [],
+      template: [],
       dialog: false,
       api: process.env.baseUrl,
       valid: false,
