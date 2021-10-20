@@ -20,8 +20,7 @@
         >{{ item }}</v-btn>
       </v-btn-toggle>
 
-      <v-menu offset-y v-if="$strapi.user">EDIT</v-menu>
-      <div v-else>
+      <div v-if="!$strapi.user">
         <LoginDialog />
       </div>
     </v-app-bar>
