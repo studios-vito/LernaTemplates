@@ -35,7 +35,7 @@ export default {
     return {
       dialog: false,
       menus: [],
-      menusLogin: ["templates", "help", "contact"],
+      menusLogin: ["save", "preview", "publish"],
       expanded: true,
     };
   },
