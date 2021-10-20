@@ -11,9 +11,17 @@
 <script >
 export default {
     layout: 'base_default',
+    data() {
+        return {
+            querry: "",
+        };
+    },
+    mounted: function () {
+        this.querry = this.$route.query.q;
+    },
     async asyncData({ $strapi, route }) {
         console.log('id', route.query.id)
-        const template = await $strapi.$notes.findOne(route.query.id);
+        const template = await $strapi.$notes.findOne(querry);
         return { template };
     },
 };
