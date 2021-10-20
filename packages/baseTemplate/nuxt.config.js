@@ -39,6 +39,7 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+    '@nuxtjs/vuetify',
     '@nuxt/image',
   ],
 
@@ -60,6 +61,16 @@ export default {
     entities: ['notes', 'users', 'mytemplates'],
     url: process.env.STRAPI_URL || 'https://arvistrapi.studiosvito.com/'
   },
+
+  // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
+  vuetify: {
+    treeShake: true,
+    customVariables: ['~/assets/styles.scss'],
+    theme: {
+      options: { customProperties: true },
+    }
+  },
+
   // Image module configuration: https://image.nuxtjs.org/
   image: {
     providers: {
@@ -77,6 +88,5 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-
   }
 }
