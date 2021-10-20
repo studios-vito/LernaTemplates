@@ -1,0 +1,30 @@
+
+@font-face {
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: local('Jost Medium'), local('Jost-Medium'),
+  url('~assets/fonts/Jost-Medium.ttf') format('truetype'), /* Safari, Android, iOS */
+  }
+  @font-face {
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Jost Regular'), local('Jost-Regular'),
+    url('~assets/fonts/Jost-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
+  }
+
+  $body-font-family: 'Jost';
+
+
+/*
+  ** Custom variable
+  */
+.overflow {
+  overflow: hidden;
+}
+.orange-label label {
+    color: rgb(231, 86, 14)!important;
+}
