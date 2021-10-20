@@ -7,7 +7,7 @@
       <v-spacer></v-spacer>
       <v-btn-toggle v-show="$vuetify.breakpoint.smAndUp" group tile>
         <v-btn
-          v-for="item in $strapi.user ? menusLogin : menus"
+          v-for="item in $strapi.user ? menus : menusLogin"
           :key="item"
           :to="`/${item}`"
           text
