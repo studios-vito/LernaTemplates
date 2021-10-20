@@ -17,7 +17,7 @@ export default {
         };
     },
     mounted: function () {
-        this.querry = this.$route.query.q;
+        this.querry = this.$route.query.id;
     },
     async asyncData({ $strapi, route }) {
         console.log('id', route.query.id)
