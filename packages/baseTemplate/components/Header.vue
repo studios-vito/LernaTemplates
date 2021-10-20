@@ -39,12 +39,6 @@ export default {
       expanded: true,
     };
   },
-  methods: {
-    async logout() {
-      this.$nuxt.$router.push("/");
-      await this.$strapi.logout();
-    },
-  },
 };
 </script>
 
