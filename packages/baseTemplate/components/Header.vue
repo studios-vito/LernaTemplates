@@ -1,9 +1,9 @@
 <template>
   <v-container id="background" class="px-12 py-0">
     <v-app-bar :height="$vuetify.breakpoint.xs ? '50px' : '100px'" flat color="transparent">
-      <NuxtLink :to="$strapi.user ? `/users/${$strapi.user.id}` : '/'">
+      <a @click.prevent="$router.back()">
         <nuxt-img src="/Minilogo.png" />
-      </NuxtLink>
+      </a>
       <v-spacer></v-spacer>
       <v-btn-toggle v-show="$vuetify.breakpoint.smAndUp" group tile>
         <v-btn
@@ -20,9 +20,7 @@
         >{{ item }}</v-btn>
       </v-btn-toggle>
 
-      <div v-if="!$strapi.user">
-        <LoginDialog />
-      </div>
+      <LoginDialog />
     </v-app-bar>
   </v-container>
 </template>
