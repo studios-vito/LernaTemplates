@@ -2,7 +2,7 @@
   <v-dialog v-model="dialog" max-width="400px">
     <template v-slot:activator="{ on, attrs }">
       <BtnPill input="EDIT" :attrs="attrs" :on="on" v-if="$strapi.user" />
-      <BtnPill input="EDIT" v-if="$strapi.user !== null" @click="createTemplate(template)" />
+      <BtnPill input="EDIT" v-else @click="createTemplate(template)" />
     </template>
     <v-card class="rounded-xl">
       <v-card-title class="justify-center">
