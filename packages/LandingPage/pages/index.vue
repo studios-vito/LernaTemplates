@@ -19,7 +19,13 @@ export default {
 
     async asyncData({ $strapi, route }) {
         console.log('id', route.query.id)
-        const id = route.query.id;
+        let id = '';
+        if (route.query.id) {
+            id = route.query.id;
+        } else {
+            id = 18;
+        }
+
         const template = await $strapi.$notes.findOne(id);
         return { template };
     },
