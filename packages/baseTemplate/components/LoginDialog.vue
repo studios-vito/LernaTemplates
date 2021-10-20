@@ -1,7 +1,7 @@
 <template>
   <v-dialog v-model="dialog" max-width="400px">
     <template v-slot:activator="{ on, attrs }">
-      <BtnPill input="Log in" :attrs="attrs" :on="on" />
+      <BtnPill input="EDIT" :attrs="attrs" :on="on" />
     </template>
     <v-card class="rounded-xl">
       <v-card-title class="justify-center">
