@@ -1,7 +1,6 @@
 <template>
   <v-dialog v-model="dialog" max-width="400px">
     <template v-slot:activator="{ on, attrs }">
-      {{ template }}
       <v-btn v-if="$strapi.user" @click="createTemplate(template)">EDIT</v-btn>
       <BtnPill input="EDIT" :attrs="attrs" :on="on" v-else />
     </template>
@@ -141,9 +140,8 @@ export default {
           Stripe_id: data.Stripe_id,
           PayStatus: false,
         });
-        this.$nuxt.$router.push(
-          `/users/${this.$strapi.user.id}/mytemplates/${newMyTemplate.id}`
-        );
+        redirect(`/users/${this.$strapi.user.id}/mytemplates/${newMyTemplate.id}`)
+        // this.$nuxt.$router.push(`/users/${this.$strapi.user.id}/mytemplates/${newMyTemplate.id}`);
       } catch (error) {
         this.error = error;
       }
