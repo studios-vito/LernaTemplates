@@ -1,6 +1,7 @@
 <template>
   <v-dialog v-model="dialog" max-width="400px">
     <template v-slot:activator="{ on, attrs }">
+      {{ template }}
       <BtnPill input="EDIT" v-if="$strapi.user" @click="createTemplate(template)" />
       <BtnPill input="EDIT" :attrs="attrs" :on="on" v-else />
     </template>
